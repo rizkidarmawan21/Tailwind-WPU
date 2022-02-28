@@ -24,6 +24,20 @@
                     colors: {
                         wpu: '#bada55',
                         kopi: '#c0ffee'
+                    },
+                    animation: {
+                        'spin-slow': 'spin 3s linear infinite',
+                        'goyang':'goyang 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        goyang: {
+                            '0%,100%': {
+                                transform: 'rotate(-3deg)'
+                            },
+                            '50%': {
+                                transform: 'rotate(3deg)'
+                            },
+                        }
                     }
                 }
             }
@@ -171,22 +185,41 @@
     </div>
 
     <hr class="my-20">
-    <div class="w-40 h-40 bg-sky-500 mx-auto rounded-lg shadow-lg hover:scale-120 hover:rotate-45 origin-top-left transition hover:bg-pink-300 ">
+    <div
+        class="w-40 h-40 bg-sky-500 mx-auto rounded-lg shadow-lg hover:scale-120 hover:rotate-180 origin-top-left transition hover:bg-pink-300 ">
     </div>
 
-    <div class="w-40 h-40 bg-pink-500 mx-auto mt-20">
-        <div class="w-full h-full bg-sky-500 ">
+    <div class="w-40 h-40 mx-auto mt-20 group">
+        <div
+            class="w-full h-full bg-sky-500 group-hover:rotate-180 origin-top-left transition duration-1000 ease-in delay-1000">
 
         </div>
+    </div>
+
+    <div class="w-40 h-40 bg-pink-500 mx-auto rounded-lg shadow-lg hover:scale-120 mt-20 animate-spin">
+    </div>
+    <div class="w-40 h-40 bg-pink-500 mx-auto rounded-lg shadow-lg hover:scale-120 mt-20 animate-spin-slow">
+    </div>
+
+    <div class="w-40 h-40 bg-amber-300 mx-auto rounded-full shadow-lg hover:scale-120 mt-20 animate-ping">
+    </div>
+    <div class="w-40 h-40 bg-green-500 mx-auto rounded-lg shadow-lg hover:scale-120 mt-20 animate-pulse">
+    </div>
+
+    <div class="w-40 h-40 bg-purple-500 mx-auto rounded-lg shadow-lg hover:scale-120 mt-20 animate-bounce">
+    </div>
+
+    <!-- custom animasi -->
+    <div class="w-40 h-40 bg-purple-500 mx-auto rounded-lg shadow-lg hover:scale-120 mt-20 animate-goyang">
     </div>
 
     <div class="mb-96"></div>
 
     <script>
         const checkbox = document.querySelector('#toggle');
-        const html =  document.querySelector('html');
+        const html = document.querySelector('html');
 
-        checkbox.addEventListener('click', function(){
+        checkbox.addEventListener('click', function () {
             checkbox.checked ? html.classList.add('dark') : html.classList.remove('dark')
         })
     </script>
